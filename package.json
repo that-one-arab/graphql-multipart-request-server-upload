@@ -1,0 +1,40 @@
+{
+    "name": "graphql-multipart-request-server-upload",
+    "version": "1.0.0",
+    "description": "A library that provides users with an easy way to upload and unit-test files in graphql while meeting the graphql multipart request upload specifications",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --testTimeout=15000 --runInBand --verbose"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/that-one-arab/graphql-multipart-request-server-upload.git"
+    },
+    "keywords": [
+        "graphql",
+        "graphql-upload",
+        "graphql-multipart-request",
+        "graphql-multipart-request-upload",
+        "graphql-upload-test",
+        "graphql-upload-unit-test"
+    ],
+    "author": "Muhammed Al-Dulaimi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/that-one-arab/graphql-multipart-request-server-upload/issues"
+    },
+    "homepage": "https://github.com/that-one-arab/graphql-multipart-request-server-upload#readme",
+    "devDependencies": {
+        "eslint": "^8.3.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "jest": "^27.3.1",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.4.1"
+    },
+    "dependencies": {
+        "form-data": "^4.0.0",
+        "node-fetch": "^2.6.6"
+    }
+}
