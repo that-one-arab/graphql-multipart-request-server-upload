@@ -4,6 +4,7 @@
     "description": "A library that provides users with an easy way to upload and unit-test files in graphql while meeting the graphql multipart request upload specifications",
     "main": "index.js",
     "scripts": {
+        "test_server": "nodemon tests/server/index.js",
         "test": "jest --testTimeout=15000 --runInBand --verbose"
     },
     "repository": {
@@ -25,16 +26,21 @@
     },
     "homepage": "https://github.com/that-one-arab/graphql-multipart-request-server-upload#readme",
     "devDependencies": {
+        "apollo-server-express": "^3.5.0",
         "eslint": "^8.3.0",
         "eslint-config-google": "^0.14.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^4.0.0",
+        "express": "^4.17.1",
+        "file-type": "^16.5.3",
+        "graphql": "^15.8.0",
+        "graphql-upload": "^13.0.0",
         "jest": "^27.3.1",
         "nodemon": "^2.0.15",
         "prettier": "^2.4.1"
     },
     "dependencies": {
         "form-data": "^4.0.0",
-        "node-fetch": "^2.6.6"
+        "node-fetch": "^2.6.1"
     }
 }

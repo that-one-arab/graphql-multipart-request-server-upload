@@ -1,6 +1,15 @@
 /** I created a testing graphql server with the below mutations */
 
 module.exports = {
+    uploadSingleSDL: `
+        mutation singleUpload($file: Upload!) {
+            singleUpload(file: $file) {
+                success
+            }
+        }
+    `,
+
+    /********************************************* */
     uploadImageSDL: `
         mutation uploadImageSDL($image: Upload) {
                 testUpload(image: $image) {
