@@ -90,21 +90,36 @@ const resolvers = {
         //     }
         // },
         singleUpload: async (parent, { file }) => {
-            const { createReadStream, filename, mimetype, encoding } =
-                await file;
+            try {
+                const { createReadStream, filename, mimetype, encoding } =
+                    await file;
 
-            const stream = createReadStream();
+                const readStream = createReadStream();
 
-            const filePath = path.resolve(
-                __dirname,
-                'images',
-                'local-file-output.jpg'
-            );
-            const out = require('fs').createWriteStream(filePath);
-            stream.pipe(out);
-            await finished(out);
+                const extension = await new Promise(async (r) => {
+                    const fileType = await FileType.fromStream(readStream);
+                    console.log({ fileType });
+                    const extension = fileType.ext;
+                    console.log({ extension });
+                    r(fileType.ext);
+                });
 
-            return { success: true };
+                const randomFileName = Math.floor(1000 + Math.random() * 9000);
+
+                const filePath = path.resolve(
+                    __dirname,
+                    'images',
+                    'local-file-output.jpg'
+                );
+                const out = require('fs').createWriteStream(filePath);
+                readStream.pipe(out);
+                // finished(out);
+
+                return { success: true };
+            } catch (error) {
+                console.log(error);
+                return { success: false };
+            }
         },
     },
 };
